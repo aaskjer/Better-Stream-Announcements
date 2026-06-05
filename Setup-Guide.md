@@ -62,6 +62,7 @@ Here you can add from where `BsA` get it's information an you can decide if you 
 ***Hover with the mouse over the options to see more details***
 Note: Using the webhook comes with limitations: updating and editing the last current announcement or removing old announcements aren't possible.
 
+### Streamer Friends
 <p align="center"><img width="634" height="661" alt="grafik" src="https://github.com/user-attachments/assets/326276b0-2405-4b4d-8bf9-3c5690382a5a"></p>
 
 Same for `Streamer Friends` you can add the same details for your discord bot or webhook or use different ones.
