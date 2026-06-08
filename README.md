@@ -47,7 +47,7 @@ Note: This project also work great running 24/7 on a remote server
 
 [aaskjer on Twitch](https://twitch.tv/aaskjer)
 
-[Better Stream Announcements on SB Discord](https://discord.com/channels/834650675224248362/1449362980524396645)
+[Better Stream Announcements on SB Discord](https://discord.com/channels/834650675224248362/1449362980524396645/1449362980524396645)
 
 [Streamer.bot](https://streamer.bot) / [nate1280](https://www.patreon.com/c/nate1280/home)
 
