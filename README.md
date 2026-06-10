@@ -40,6 +40,10 @@ Note: This project also work great running 24/7 on a remote server
 
 [Frequently Asked Questions](https://github.com/aaskjer/Better-Stream-Announcements/blob/main/FAQ.md)
 
+[Import String for streamer.bot](https://github.com/aaskjer/Better-Stream-Announcements/blob/main/Utilities/Import-String.md)
+
+[Download](https://github.com/aaskjer/Better-Stream-Announcements/releases) ![GitHub Release](https://img.shields.io/github/v/release/aaskjer/Better-Stream-Announcements)
+
 ---
 
 ## Credits & Links
