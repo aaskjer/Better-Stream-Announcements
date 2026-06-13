@@ -1,6 +1,6 @@
 ## Does it work for platform XYZ?
 Yes, `Better Stream Announcements` supports all platforms that are currently supported by `streamer.bot` (1.0.4).
-*Trovo may not be present anymore in later versions since they are closing down*
+*Trovo may not be present anymore in future versions because of going out of business*
 
 ## I don't want to use a discord bot for the announcements
 You always have the option to use webhooks, but consider: they work with limitations. (no updates, editing, removing possible)
@@ -20,3 +20,7 @@ not necessarily because Streamer Friends exhaust your tokens with frequent API c
 ## Can i add custom messages to my friends announcements?
 Yes, but you're limited to the description field inside the embeds. In order to use it, you need to go to the sub-action `Custom Messages` of the
 `[BsA] - Streamer Friends` action and add your custom messages as `Set Argument` sub-action there. 
+
+## Can i send my announcements to other discords?
+Only through the crosspost feature (*you need a community discord and other discord owners must be subscriber of your announcement channel*)
+or other discord owners share their webhook URL. *Sharing webhook URLs with strangers is a safety risk*
