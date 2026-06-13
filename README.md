@@ -1,6 +1,6 @@
 <p align="center"><img src="https://github.com/aaskjer/Better-Stream-Announcements/blob/main/Assets/BsA-Full.png?raw=true" alt="BsA banner" width="400" height="400"></p>
 
-**Better Stream Announcements** is a Streamer.bot project for managing livestream announcements in Discord for multiple platforms.
+**Better Stream Announcements** is a streamer.bot project for managing livestream announcements in Discord for multiple platforms.
 It helps broadcasters automatically post embed stream notifications, supports streamer friends and community promotions.
 *Inspired by streamcord*
 
@@ -9,7 +9,7 @@ It helps broadcasters automatically post embed stream notifications, supports st
 # Overview
 
 - **Automatic Discord announcements**  
-  Posts polished go-live and stream-ended messages for your own channel directly from Streamer.bot.
+  Posts embed go-live and stream-ended messages for your own channel directly from Streamer.bot.
 
 - **Multi-platform support**  
   Works with Twitch, YouTube, Kick, and Trovo, so your announcements stay consistent across platforms.
@@ -27,7 +27,7 @@ It helps broadcasters automatically post embed stream notifications, supports st
   Includes a Discord bot presence and self-assign flow so users can register themselves for announcements and roles.
 
 - **Built-in settings GUI**  
-  Comes with a Streamer.bot settings window for quick configuration, theming, and troubleshooting without editing code.
+  Comes with a GUI window for quick configuration, theming, and troubleshooting without editing code.
 
 Note: This project also work great running 24/7 on a remote server
 
