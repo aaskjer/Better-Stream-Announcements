@@ -1,8 +1,9 @@
 <p align="center"><img src="https://github.com/aaskjer/Better-Stream-Announcements/blob/main/Assets/BsA-Full.png?raw=true" alt="BsA banner" width="400" height="400"></p>
 
-**Better Stream Announcements** is a streamer.bot project for managing livestream announcements in Discord for multiple platforms.
-It helps broadcasters automatically post embed stream notifications, supports streamer friends and community promotions.
+Manage livestream announcements in Discord for multiple platforms.
+Post embed stream notifications, supports streamer friends and community promotions.
 *Inspired by streamcord*
+
 
 ---
 
