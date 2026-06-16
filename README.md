@@ -43,7 +43,7 @@ Note: This project also work great running 24/7 on a remote server
 
 [Import String for streamer.bot](https://github.com/aaskjer/Better-Stream-Announcements/blob/main/Import-String.md)
 
-[Download](https://github.com/aaskjer/Better-Stream-Announcements/releases) ![GitHub Release](https://img.shields.io/github/v/release/aaskjer/Better-Stream-Announcements)
+[Download](https://github.com/aaskjer/Better-Stream-Announcements/releases)
 
 ---
 
