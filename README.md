@@ -1,4 +1,4 @@
-<p align="center"><img src="https://github.com/aaskjer/Better-Stream-Announcements/blob/main/Assets/BsA-Full.png?raw=true" alt="BsA banner" width="400" height="400"></p>
+<p align="center"><img src="https://github.com/aaskjer/Better-Stream-Announcements/blob/main/Assets/Bsa-Full.png?raw=true" alt="BsA banner" width="400" height="400"></p>
 
 Manage livestream announcements in Discord for multiple platforms.
 Post embed stream notifications, supports streamer friends and community promotions.
