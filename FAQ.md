@@ -186,9 +186,9 @@ No — each platform is tracked independently per streamer/friend, with its own 
 
 Opening the Settings GUI checks GitHub for the latest release tag. If it's newer than what's installed, a popup offers to open the releases page.
 
-**Q: Can I check for updates without opening the full Settings window?**
+**Q: Can I check for updates without opening the Settings window?**
 
-Not currently — the check runs as part of opening Settings.
+Partially — You still have to trigger the `Test` trigger but if you press `Yes` in the update notification popup, the check won't open the GUI but the GitHub page instead.
 
 ---
 
