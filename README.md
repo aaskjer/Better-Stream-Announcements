@@ -5,6 +5,12 @@ Post embed stream notifications, supports streamer friends and community promoti
 *Inspired by streamcord*
 
 
+![Static Badge](https://img.shields.io/badge/https%3A%2F%2Fimg.shields.io%2Fbadge%2Fany_text-Twitch-grey?label=supported%20platform&color=%236441a5)
+![Static Badge](https://img.shields.io/badge/https%3A%2F%2Fimg.shields.io%2Fbadge%2Fany_text-streamer.bot-white?label=tool&color=%230b73ff)
+![GitHub License](https://img.shields.io/github/license/aaskjer/Better-Stream-Announcements)
+![GitHub Release](https://img.shields.io/github/v/release/aaskjer/Better-Stream-Announcements)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/aaskjer/Better-Stream-Announcements/total)
+
 ---
 
 # Overview
