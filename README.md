@@ -1,14 +1,17 @@
 <p align="center"><img src="https://github.com/aaskjer/Better-Stream-Announcements/blob/main/Assets/Bsa-Full.png?raw=true" alt="BsA banner" width="400" height="500"></p>
 
-Manage livestream announcements in Discord for multiple platforms.
-Post embed stream notifications, supports streamer friends and community promotions.
-*Inspired by streamcord*
+<p align="center">Manage livestream announcements in Discord for multiple platforms.
+  Post embed stream notifications, supports streamer friends and community promotions.</p>
 
-![Static Badge](https://img.shields.io/badge/https%3A%2F%2Fimg.shields.io%2Fbadge%2Fany_text-Twitch%2C_YouTube%2C_Kick%2C_Owncast%2C_Rumble%2C_Picarto%2C_TikTok-white?label=supported%20plattform)
-![Static Badge](https://img.shields.io/badge/https%3A%2F%2Fimg.shields.io%2Fbadge%2Fany_text-streamer.bot-white?label=tool&color=%230b73ff)
-![GitHub License](https://img.shields.io/github/license/aaskjer/Better-Stream-Announcements)
-![GitHub Release](https://img.shields.io/github/v/release/aaskjer/Better-Stream-Announcements)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/aaskjer/Better-Stream-Announcements/total)
+<p align="center">
+  <img alt="Platform: Twitch" src="https://img.shields.io/badge/https%3A%2F%2Fimg.shields.io%2Fbadge%2Fany_text-Twitch%2C_YouTube%2C_Kick%2C_Owncast%2C_Rumble%2C_Picarto%2C_TikTok-white?label=supported%20plattform">
+  <img alt="tool: streamer.bot" src="https://img.shields.io/badge/tool-streamer.bot-0b73ff">
+  <a href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow"></a>
+  </p><p align="center">
+  <img alt="Latest stable release" src="https://img.shields.io/github/v/release/aaskjer/Better-Stream-Announcements?label=stable">
+  <img alt="Total downloads" src="https://img.shields.io/github/downloads/aaskjer/Better-Stream-Announcements/total">
+  <img alt="GitHub stars" src="https://img.shields.io/github/stars/aaskjer/Better-Stream-Announcements">
+</p>
 
 ---
 
@@ -65,6 +68,6 @@ Note: This project also work great running 24/7 on a remote server
 
 [Streamer.bot](https://streamer.bot) / [nate1280](https://www.patreon.com/c/nate1280/home)
 
-[Sorylokan](https://extensions.streamer.bot/u/Sorylokan/summary)
+[Sorylokan](https://sorylokan.github.io/)
 
 YOU ♡
