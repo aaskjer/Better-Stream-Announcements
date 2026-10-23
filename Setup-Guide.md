@@ -10,7 +10,9 @@ Drag the `BetterStreamAnnouncements.sb` into the import window. Click on `Yes/Ok
 
 <p align="center"><img width="1280" height="720" alt="grafik" src="https://github.com/user-attachments/assets/17a5d427-e982-49ca-8f0e-57060a0d6ff4"></p>
 
-Enable the timer seen in the screenshot, so the script will check for your friends from time to time.
+Enable the timers seen in the screenshot, so the scripts check on your friends from time to time.
+There is one `[BsA\SF]` timer per platform - Twitch, YouTube, Kick, Owncast, Rumble, Picarto and TikTok.
+Enable only the ones you actually use: **a platform whose timer is off is never polled and never announces anything.**
 
 
 ---
@@ -18,7 +20,11 @@ Enable the timer seen in the screenshot, so the script will check for your frien
 # Install
 <p align="center"><img width="1280" height="720" alt="grafik" src="https://github.com/user-attachments/assets/ac21effa-0e6b-4f24-b7e9-fb230e09c20d"></p>
 
-Go to `[BsA] - ..Settings..` and trigger the `Test` trigger to open up the GUI.
+Go to `[BsA] - .Settings` and trigger the `Test` trigger to open up the GUI.
+
+Most of what follows can also be done from Discord with `/bsa setup`, which picks channels, ping roles,
+ISLIVE roles and bot admins through Discord's own menus, so you never have to copy an ID by hand.
+The GUI stays the place for everything else.
 
 ## Broadcaster
 ### Online
@@ -42,7 +48,9 @@ when they are detected as offline.
 ### Online
 <p align="center"><img width="634" height="661" alt="grafik" src="https://github.com/user-attachments/assets/42570b93-bab2-4c2f-9309-076c50dd24c7"></p>
 
-Basically the same as in the `Broadcaster` Section. Add unique custom descriptions to your friends announcements, in the action `[BsA] - Streamer Friends` add an argument to the
+Basically the same as in the `Broadcaster` Section. Add unique custom descriptions to your friends announcements:
+in the action for that platform - `Streamer Friends (Twitch)`, `Streamer Friends (YouTube)` and so on, one per
+platform since this release - add an argument to the
 
 <p align="center"><img width="1280" height="720" alt="grafik" src="https://github.com/user-attachments/assets/0486c37c-4800-4be2-b578-31eee7376f9b"></p>
 
@@ -77,10 +85,15 @@ Add an exclusive role (e.g. `Members`) if you don't want literally `anybody` to 
 
 #### Create a Discord bot
 * Go to [discord.com/developers/applications](https://discord.com/developers/applications) and click `New Application`
-* Under `Bot` go to `Privileged Gateway Intents` enable `Message Content Intent` and save it
+* Under `Bot` go to `Privileged Gateway Intents` and enable `Presence Intent` and `Server Members Intent`, then save
+  * `Message Content Intent` is **no longer needed** since v2.0.0 and can stay off - the bot runs on slash commands
 * Under `Bot` click `Reset Token` and save it somewhere
-* Go to `OAuth2` → `OAuth2 URL-Generator`, select scopes: `bot`
+* Go to `OAuth2` → `OAuth2 URL-Generator`, select scopes: `bot` **and** `applications.commands`
+  * Without `applications.commands` the slash commands never show up in your server
 * Check `Administrator` in the now appeared `Bot-Permissions` 
 * Open the generated URL, select your server and click Authorize
+
+The bot registers `/bsa`, `/streamerfriends` and `/crosspost` by itself once it connects. If they do not appear,
+use **Slash Commands → Register Again** under Discord Bot → Bot Presence in the settings window.
 
   
