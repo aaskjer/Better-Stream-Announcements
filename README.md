@@ -4,7 +4,7 @@ Manage livestream announcements in Discord for multiple platforms.
 Post embed stream notifications, supports streamer friends and community promotions.
 *Inspired by streamcord*
 
-![Static Badge](https://img.shields.io/badge/https%3A%2F%2Fimg.shields.io%2Fbadge%2Fany_text-Twitch%2C_Kick%2C_YouTube-white?label=supported%20plattform)
+![Static Badge](https://img.shields.io/badge/https%3A%2F%2Fimg.shields.io%2Fbadge%2Fany_text-Twitch%2C_YouTube%2C_Kick%2C_Owncast%2C_Rumble%2C_Picarto%2C_TikTok-white?label=supported%20plattform)
 ![Static Badge](https://img.shields.io/badge/https%3A%2F%2Fimg.shields.io%2Fbadge%2Fany_text-streamer.bot-white?label=tool&color=%230b73ff)
 ![GitHub License](https://img.shields.io/github/license/aaskjer/Better-Stream-Announcements)
 ![GitHub Release](https://img.shields.io/github/v/release/aaskjer/Better-Stream-Announcements)
@@ -18,7 +18,7 @@ Post embed stream notifications, supports streamer friends and community promoti
   Posts embed go-live and stream-ended messages for your own channel directly from Streamer.bot.
 
 - **Multi-platform support**  
-  Works with Twitch, YouTube, Kick, and Trovo, so your announcements stay consistent across platforms.
+  Works with Twitch, YouTube, Kick, Owncast, Rumble, Picarto and TikTok, so your announcements stay consistent across platforms.
 
 - **Customizable embed content**  
   Add game info, viewer counts, follower counts, tags, box art, preview images, and a Watch button to match your style.
@@ -31,6 +31,10 @@ Post embed stream notifications, supports streamer friends and community promoti
 
 - **Self-service Discord setup**  
   Includes a Discord bot presence and self-assign flow so users can register themselves for announcements and roles.
+
+- **Discord slash commands**  
+  `/bsa`, `/streamerfriends` and `/crosspost` replace the old `?` prefix commands, and `/bsa setup` configures
+  channels, ping roles and ISLIVE roles with Discord's own pickers, so nobody has to copy IDs by hand.
 
 - **Built-in settings GUI**  
   Comes with a GUI window for quick configuration, theming, and troubleshooting without editing code.
