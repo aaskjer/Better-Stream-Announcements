@@ -2,6 +2,15 @@
 
 All notable changes to Better Stream Announcements are documented here.
 
+## v2.0.1 — Connection-Trouble Notices for Your Own Announcements
+
+### Added
+- **Connection-trouble notice for your own announcements.** Broadcaster Online and Offline now count dropouts the way Streamer Friends does: every offline event is a drop, and once a second one lands within 30 minutes the stream is having connection trouble rather than ending. Both embeds say so — the ended one reads **BetterStreamAnnouncements • ⚠️ Connection trouble** instead of **• OFFLINE since**, and so does the announcement that comes back up when the stream returns within the 20-minute revive window, instead of **• LIVE since**. The notice clears itself once the stream has held 15 minutes without dropping again, and a comeback after the revive window posts a fresh announcement with a clean footer. A single dropout never trips it, and two unrelated dropouts hours apart do not add up.
+- **“LIVE since” and “OFFLINE since” in the broadcaster footers.** Your own announcements carried a bare **BetterStreamAnnouncements** footer while the Streamer Friends embeds said what their timestamp meant. They now read **• LIVE since** and **• OFFLINE since** like the others. The live one keeps the moment the stream went live even when the announcement is edited later, so an update no longer moves the time to “now”, and the ended one holds the moment the stream dropped even if the first delivery attempt fails and a later one posts instead.
+
+### Changed
+- **Every footer separator is • now.** Discord joins a footer and its timestamp with • of its own, so the · the footers used read as a second, smaller separator in the same line (“BetterStreamAnnouncements · LIVE since • 21:34”). All footers use • — both Streamer Friends embeds on all seven platforms, Broadcaster Online and Offline, and the `/bsa setup` page counter.
+
 ## v2.0.0 — Slash Commands, `/bsa setup` & Seven Platforms for Members
 
 ### Upgrade notes
