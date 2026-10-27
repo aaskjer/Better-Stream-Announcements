@@ -2,6 +2,32 @@
 
 All notable changes to Better Stream Announcements are documented here.
 
+## v2.1.0 — Stoat & GameVox Copies, a New Settings Window and a Color Picker
+
+### Upgrade notes
+- **Nothing to redo.** The four new webhook fields (GameVox and Stoat, for the broadcaster and for Streamer Friends) start empty, and while they are empty everything is posted exactly as before. Import the new version over the old one: ten of the fourteen actions carry new code, and actions, triggers and settings stay as they are.
+
+### Added
+- **A copy of every announcement on GameVox and Stoat.** Broadcaster → Platforms and Streamer Friends → Platforms each take an optional GameVox webhook and an optional Stoat webhook. With one set, every announcement also goes to that channel, and the copy follows the Discord message: it is updated with it and switched to its ended form when the stream ends. Your own announcement's copy also comes back with it when the stream returns within the revive window, and a Streamer Friend's copy is deleted together with the Discord message once **Remove Old Message** takes it down. The copy is only ever posted together with a new Discord announcement, so a webhook added while someone is live starts with their next stream. Every call is best effort: a rate limit or a server error is retried once, a failure is logged, and the Discord side carries on either way.
+  - **GameVox** speaks Discord's webhook API, so its copy is the Discord post minus what GameVox cannot use: the buttons, the role mentions (those roles only exist on Discord) and the embed timestamp, whose time moves into the footer instead (“LIVE since • 2026-10-25 20:15”). It posts under the webhook's own name and picture.
+  - **Stoat** (formerly Revolt) has embeds without an author line, fields or footer, so its copy carries the author line in bold above the embed and the fields and the footer as lines of the description. It has no preview picture: Stoat only takes pictures uploaded through a bot account. Stoat counts the embed text against the message's 2000 characters, so a long description is shortened to fit.
+- **Home page** in the Settings window. **Right Now** shows who is live, where announcements go (Discord by bot or webhook, the GameVox and Stoat copies) and how many Streamer Friends each platform has; **Start Here** walks through the setup in five steps, each with a link to its page, and can be hidden (the switch to bring it back is on the About page); **Today** counts the warnings and errors in today's log and names the last problem; **Help And Links** points to the guides.
+- **Status Log page** (Help → Status Log): everything BsA wrote to Streamer.bot's log, one day at a time — every line a BsA action logged, plus what Streamer.bot itself reports about a BsA action, such as an error naming it or a sub-action that would not compile. Filter by day, by action, by level and by text (Esc clears the text); **Refresh** reads today's file again while Streamer.bot keeps writing it, and 📁 opens Streamer.bot's log folder.
+- **Color picker on every embed color.** Each embed color in the Settings window (Broadcaster Online and Offline, Streamer Friends live and ended) has a swatch beside its hex box that shows the color, and a click on it opens a picker right under the field: a field for saturation and brightness and a hue bar, both to click or drag, sliders for red, green and blue (the mouse wheel nudges them by one), and a row of the colors Discord uses most. Every change goes straight into the hex box, and typing a hex code moves the picker along. Done or a click elsewhere closes it.
+
+### Changed
+- **The Settings window is rebuilt around a sidebar.** The nested tabs are gone: a sidebar lists the pages in four groups — Broadcaster, Streamer Friends, Discord Bot and Help — and every page keeps the name it had as a tab, so a hint like “Broadcaster → Platforms” still leads to the same place. The pages open under a colored title band, Home and About under the BsA logo.
+  - **Search** over every setting (Ctrl+F): it finds a page by its labels, its checkbox texts and the setting keys.
+  - **Unsaved changes** are counted in the footer. **Save** (Ctrl+S) keeps the window open, **Save & Exit** closes it, and closing with unsaved changes asks first.
+  - Theme and reset moved into the ☰ menu.
+
+### Fixed
+- **Placeholders in Owncast, Picarto, Rumble and TikTok announcements.** The Settings window documents `{user}`, `{title}`, `{game}`, `{url}` and `{viewers}` for Streamer Friends, but these four actions only took `%user%` and the like, so the documented form came out as literal text. Both forms work now. Owncast, Picarto and TikTok report no category, so `{game}` stays empty there.
+- **`{game}` on YouTube** comes out empty instead of as literal text, since YouTube gives no category.
+
+### Removed
+- The 🎨 button next to **Random Embed Color**. It only opened colorspicker.net in the browser; the picker beside each color replaces it.
+
 ## v2.0.1 — Connection-Trouble Notices for Your Own Announcements
 
 ### Added
