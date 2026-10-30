@@ -5,7 +5,7 @@
 <h1 align="center">Better Stream Announcements</h1>
 
 <p align="center">
-  <b>Livestream announcements in Discord, for your channel and your streamer friends.</b><br>
+  <b>Livestream announcements for your channel and your streamer friends.</b><br>
   Twitch, YouTube, Kick, Owncast, Rumble, Picarto and TikTok, straight from Streamer.bot.
 </p>
 
@@ -29,9 +29,9 @@
 
 ## 📖 Overview
 
-Better Stream Announcements posts go-live and stream-ended embeds to Discord, straight from Streamer.bot.
+Better Stream Announcements posts go-live and stream-ended embeds to Discord, Stoat or GameVox.
 It announces your own channel, the creators you pick as streamer friends and community promotions. It also
-runs 24/7 on a remote server.
+runs perfectly 24/7 on a remote server.
 
 ## ✨ Highlights
 
