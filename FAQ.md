@@ -12,7 +12,13 @@ Everything lives in one shared file under your Streamer.bot base directory:
 Announcements/Discord/settings.json   ← every setting for every feature (Broadcaster, Streamer Friends, Discord Bot, Role Assign, Custom Crosspost)
 ```
 
-You shouldn't have to edit it by hand; the Settings GUI covers all of it. Every BsA action (Broadcaster Online/Offline, Streamer Friends, Discord Bot Presence, Presence Role Assign, Self-Assign, Custom Crosspost) reads this one file, so a change made in any tab reaches every script that cares about it.
+You shouldn't have to edit it by hand; the Settings GUI covers all of it. Every BsA action (Broadcaster Online/Offline, Streamer Friends, Discord Bot Presence, Presence Role Assign, Self-Assign, Custom Crosspost) reads this one file, so a change made on any page reaches every script that cares about it.
+
+---
+
+**Q: Where do I see what BsA actually did?**
+
+In the Settings window under **Help → Status Log**: every line a BsA action wrote to Streamer.bot's log, one day at a time, plus what Streamer.bot itself reported about a BsA action, such as an error naming it or a script that would not compile. Filter it by day, action, level and text. **Home → Today** sums up today's log: announcements posted, warnings, errors, and the last problem.
 
 ---
 
@@ -34,7 +40,7 @@ If the Settings window happens to be open while you do this, that's fine: saving
 
 **Q: How do I reset all settings to defaults?**
 
-Click **Reset to Defaults**, the red button at the bottom left of the Settings window (it's there on every tab). It rewrites `settings.json` with factory values and reopens the GUI. **Show Debug / Testing Sections** is a separate toggle under **About → Advanced**; it only reveals the debug checkboxes mentioned elsewhere in this FAQ and doesn't reset anything.
+Open the **☰** menu at the top left of the Settings window and pick **Reset to Defaults…**. It rewrites `settings.json` with factory values and reopens the window. **Show Debug / Testing Sections** is a separate toggle under **About → Advanced**; it only reveals the debug checkboxes mentioned elsewhere in this FAQ and doesn't reset anything.
 
 ---
 
@@ -59,12 +65,24 @@ A real bug in older releases. A few embed-building calls used `new JArray { item
 
 You only need one of the two. With both set, the channel and the bot win.
 
+**Q: Can BsA announce on GameVox or Stoat instead of, or as well as, Discord?**
+
+Yes. Broadcaster → Platforms and Streamer Friends → Platforms each take a GameVox webhook and a Stoat webhook. Discord, GameVox and Stoat are three delivery targets of their own: each one is posted when a stream starts, updated while it runs, switched to its ended form when it ends and, for a Streamer Friend, deleted once **Remove Old Message** takes it down. A target that isn't set up, or that refuses a post, never holds the other two back, so a GameVox or Stoat webhook on its own is enough to announce with.
+
+What each one leaves out:
+- **GameVox** speaks Discord's webhook API, so it gets the Discord post minus the buttons and the role mentions (those roles only exist on Discord). The time moves from the embed timestamp into the footer, and it posts under the webhook's own name and picture.
+- **Stoat** has no author line, fields or footer in its embeds, so they become lines of text, and there's no preview picture: Stoat only takes pictures uploaded through a bot account. Message and embed share Stoat's 2000 characters, so a long description is shortened.
+
+A message is only posted for a stream that is starting, so a webhook added while someone is live starts with their next stream.
+
 **Q: Why didn't my announcement post when I went live?**
 
 Check, in this order:
-1. **Filter by Category / Filter by Title** (Broadcaster → Online → Filters). If either is set, nothing gets posted unless the category matches one of your entries exactly or the title contains your keyword. Empty means no filtering.
-2. A **20-minute cooldown** after your last announcement keeps a shaky reconnect from posting twice. That's intentional; only the hidden `BA_SkipCooldown` debug flag bypasses it (Broadcaster → Online → Debug & Testing, visible once **Show Debug / Testing Sections** is on in About → Advanced).
-3. `BOT_Token` + `BA_ChannelId` missing or wrong, and no `BA_WebhookUrl` as fallback.
+1. **Help → Status Log** in the Settings window. It usually says why in one line.
+2. **The actions `Broadcaster Online` and `Broadcaster Offline` are enabled** in Streamer.bot. They come switched off in the import, so nothing goes out before you've set things up.
+3. **Filter by Category / Filter by Title** (Broadcaster → Online → Filters). If either is set, nothing gets posted unless the category matches one of your entries exactly or the title contains your keyword. Empty means no filtering.
+4. A **20-minute cooldown** after your last announcement keeps a shaky reconnect from posting twice. That's intentional; only the hidden `BA_SkipCooldown` debug flag bypasses it (Broadcaster → Online → Debug & Testing, visible once **Show Debug / Testing Sections** is on in About → Advanced).
+5. Nowhere to post: `BOT_Token` + `BA_ChannelId` missing or wrong, no `BA_WebhookUrl` as fallback, and no GameVox or Stoat webhook either. **Home → Right Now** says so in its first line.
 
 **Q: Random Embed Color is on — do the per-platform hex colors still matter?**
 
@@ -165,7 +183,7 @@ A real bug in older versions. With the same role ID set up in both systems, Pres
 
 **Q: My member intentionally sets themselves Offline/Invisible on Discord — will they still get roles?**
 
-By default, yes. Streamer Friends ignores Discord status entirely, and Presence Role Assign usually can't see a "Streaming" activity for an Invisible member anyway, because Discord hides it. If you want Offline/Invisible members skipped, turn on **Skip Offline/Invisible Discord Users** in the matching tab.
+By default, yes. Streamer Friends ignores Discord status entirely, and Presence Role Assign usually can't see a "Streaming" activity for an Invisible member anyway, because Discord hides it. If you want Offline/Invisible members skipped, turn on **Skip Offline/Invisible Discord Users** on the matching page.
 
 ---
 
@@ -194,7 +212,7 @@ The bot uses slash commands. Type `/` in your server and Discord lists them with
 | `/crosspost service on\|off` | Crosspost admins | Open or close new subscriptions |
 | `/crosspost help` | Everyone | How crossposting works |
 
-**Bot admins** are the members, and everyone holding a role, listed under **Admin User/Role (IDs)** (Bot Presence tab). User and role IDs can be mixed. While that list is empty, anyone with Discord's **Manage Server** permission counts as one. Self-Assign and Crosspost admins come from their own **Admin Role ID(s)** fields.
+**Bot admins** are the members, and everyone holding a role, listed under **Admin User/Role (IDs)** (Discord Bot → Bot Presence). User and role IDs can be mixed. While that list is empty, anyone with Discord's **Manage Server** permission counts as one. Self-Assign and Crosspost admins come from their own **Admin Role ID(s)** fields.
 
 **Q: Where did `?bsahelp`, `?cc`, `?sfadd` and the other `?` commands go?**
 
@@ -225,7 +243,7 @@ Under **Privileged Gateway Intents** in the Discord Developer Portal, turn on **
 Start with `/bsa status`. It shows the connection, whether the presence is switched on, whether the settings watcher is still alive, and any error that stopped the session. Then go down this list:
 
 - **Privileged intents got switched off.** The usual reason a bot that worked yesterday is offline today. Discord refuses the connection outright (close code `4014`) when the bot asks for an intent the application isn't approved for, and it revokes them by itself once an unverified bot passes 100 servers. BsA then reconnects without them, so the bot still comes online and the slash commands keep working; the log and `/bsa status` say so. Presence Role Assign stays without data until you turn the intents back on in the Developer Portal and restart the action.
-- **Status is set to "Offline".** In the Bot Presence tab that means Discord's *invisible*, which looks exactly like a dead bot. Pick **Online** for the green dot.
+- **Status is set to "Offline".** On the Bot Presence page that means Discord's *invisible*, which looks exactly like a dead bot. Pick **Online** for the green dot.
 - **Activity Type is "Streaming" without a usable Stream URL.** Discord quietly drops a Streaming activity unless it carries a `twitch.tv` or `youtube.com` link, leaving the bot with no activity line at all. BsA falls back to *Playing* and logs why.
 - **The settings watcher died.** Live updates rely on a file watcher, and Windows silently kills it when its buffer overflows or the folder gets replaced. `/bsa status` shows whether it's still watching; it's rebuilt on every reconnect anyway, and the settings are read again on every connect.
 - **Something else drives this bot's presence.** Switch **Set Bot Presence** off (next question) and let the other thing own it.
@@ -246,8 +264,9 @@ Yes: **Discord Bot → Bot Presence → Set Bot Presence**. With it off, BsA nev
 - **YouTube:** the @handle or channel ID
 - **Owncast:** the server address, e.g. `stream.example.org`
 - **Rumble:** the livestream API URL, plus the channel link (optional) for the name shown in announcements
+- **TikTok:** the user name, as in `tiktok.com/@yourname`
 
-The bot looks the account up before saving it, so typos and wrong platforms are caught right away. For Twitch, YouTube, Kick and Picarto this needs the credentials under Streamer Friends → Platforms.
+The bot looks the account up before saving it, so typos and wrong platforms are caught right away. For Twitch, YouTube, Kick and Picarto this needs the credentials under Streamer Friends → Platforms; TikTok is checked against the public profile page.
 
 **Q: How do "Exclusive Role ID(s)" work for Self-Assign?**
 
@@ -322,7 +341,7 @@ No. Each platform is tracked separately per streamer or friend, with its own ses
 
 **Q: How do I know when a new version is available?**
 
-Opening the Settings GUI checks GitHub for the latest release tag. If it's newer than what you have installed, a popup offers to open the releases page. Once you've dismissed it, it won't ask again for that version.
+Opening the Settings window checks GitHub for the latest release. While that isn't the version you have installed, a popup offers to open the releases page each time the window opens, and the window's title says **🔔 Update available** with the new version. Home and About show the version you run.
 
 **Q: Can I check for updates without opening the full Settings window?**
 
