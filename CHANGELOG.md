@@ -13,6 +13,9 @@ All notable changes to Better Stream Announcements are documented here.
 - **Discord is no longer required.** A GameVox or Stoat webhook on its own is enough to announce with, for your own stream and for Streamer Friends alike. The Home page counts a channel as ready once any one of the three is set up, and its **Posting To** row shows GameVox and Stoat as targets of their own instead of as copies.
 - The GameVox and Stoat hints on Broadcaster → Platforms and Streamer Friends → Platforms describe the new behavior.
 
+### Fixed
+- **Endless Stoat retries after the Stoat webhook was replaced.** Stoat lets a webhook edit and delete only the messages it posted itself and answers any other with `403 CannotEditMessage` / `CannotDeleteMessage`. A message posted through the previous webhook was therefore asked about again on every cycle, forever — around a thousand `Stoat delete failed` warnings a day. Such a message is now let go after one warning: it stays in the Stoat channel as it is, and nothing waits on it any more. Broadcaster Online and Offline and all seven Streamer Friends actions.
+
 ### Documentation
 - **The Setup Guide is rewritten** for the sidebar Settings window, with a screenshot of every page, a table of the imported actions, and the two things that come switched off: the timers and Broadcaster Online/Offline.
 - **FAQ:** GameVox and Stoat, the Status Log, TikTok in `/streamerfriends link`, the ☰ menu's Reset to Defaults, and how the update check really behaves.
