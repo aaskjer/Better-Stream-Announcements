@@ -2,6 +2,21 @@
 
 All notable changes to Better Stream Announcements are documented here.
 
+## v2.1.1 — GameVox and Stoat Without Discord
+
+### Upgrade notes
+- **Nothing to redo.** Import the new version over the old one: ten of the fourteen scripts carry new code (Broadcaster Online and Offline, the Settings window and all seven Streamer Friends actions), and your settings stay as they are.
+- **Check that `Broadcaster Online` and `Broadcaster Offline` are enabled afterwards** if BsA announces your own stream. Both have come switched off in the import since v2.0.0, so nothing is posted before it's set up, and an import over an existing install can switch them off again.
+
+### Changed
+- **Discord, GameVox and Stoat are three delivery targets of their own.** In v2.1.0 the GameVox and Stoat messages were copies that followed the Discord post: they were only posted together with a new Discord announcement, and a Discord post or edit that failed held them back. Now each one is posted when a stream starts, updated while it runs, switched to its ended form when it ends, brought back with a stream that returns inside the revive window, and — for a Streamer Friend — deleted once **Remove Old Message** takes it down, whatever the other two are doing. A Discord post or edit that fails never holds GameVox or Stoat back, and neither holds the other back.
+- **Discord is no longer required.** A GameVox or Stoat webhook on its own is enough to announce with, for your own stream and for Streamer Friends alike. The Home page counts a channel as ready once any one of the three is set up, and its **Posting To** row shows GameVox and Stoat as targets of their own instead of as copies.
+- The GameVox and Stoat hints on Broadcaster → Platforms and Streamer Friends → Platforms describe the new behavior.
+
+### Documentation
+- **The Setup Guide is rewritten** for the sidebar Settings window, with a screenshot of every page, a table of the imported actions, and the two things that come switched off: the timers and Broadcaster Online/Offline.
+- **FAQ:** GameVox and Stoat, the Status Log, TikTok in `/streamerfriends link`, the ☰ menu's Reset to Defaults, and how the update check really behaves.
+
 ## v2.1.0 — Stoat & GameVox Copies, a New Settings Window and a Color Picker
 
 ### Upgrade notes
