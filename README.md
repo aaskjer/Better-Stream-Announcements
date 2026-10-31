@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/aaskjer/Better-Stream-Announcements/blob/main/Assets/BsA-Favicon.png?raw=true" alt="Better Stream Announcements" width="400" height="500">
+  <img src="https://github.com/aaskjer/Better-Stream-Announcements/blob/main/Assets/BsA-Favicon.png?raw=true" alt="Better Stream Announcements" width="230" height="300">
 </p>
 
 <h1 align="center">Better Stream Announcements</h1>
