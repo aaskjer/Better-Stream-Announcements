@@ -11,6 +11,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/platforms-Twitch%20%7C%20YouTube%20%7C%20Kick%20%7C%20Owncast%20%7C%20Rumble%20%7C%20Picarto%20%7C%20TikTok-9146FF" alt="Platforms">
+  <img src="https://img.shields.io/badge/webhooks-Discord%20%7C%20Stoat%20%7C%20GameVox-5865F2" alt="Webhooks">
   <img src="https://img.shields.io/badge/tool-streamer.bot-0b73ff" alt="Streamer.bot">
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow" alt="License: MIT"></a>
   <img src="https://img.shields.io/github/v/release/aaskjer/Better-Stream-Announcements?label=stable" alt="Release">
